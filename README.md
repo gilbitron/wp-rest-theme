@@ -5,6 +5,8 @@ demonstrate how to create a [single page application](https://en.wikipedia.org/w
 [Vue.js](http://vuejs.org) to power the front end site while fetching data from the backend via the
 [WordPress REST API](http://v2.wp-api.org), all without sacrificing SEO.
 
+![](https://cloud.githubusercontent.com/assets/203882/12955214/ec10e59c-d019-11e5-9c15-403c1ba76ce9.gif)
+
 ### Requirements
 
 * [WordPress REST API plugin (v2)](https://wordpress.org/plugins/rest-api)
