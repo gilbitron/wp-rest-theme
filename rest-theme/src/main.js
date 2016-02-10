@@ -17,47 +17,47 @@ import Footer from './theme-footer.vue'
 Vue.component('theme-footer', Footer)
 
 var App = Vue.extend({
-	template: '<theme-header></theme-header>' +
-	          '<div class="container"><router-view></router-view></div>' +
+    template: '<theme-header></theme-header>' +
+              '<div class="container"><router-view></router-view></div>' +
               '<theme-footer></theme-footer>',
 
-	ready() {
-		this.updateTitle('');
-	},
+    ready() {
+        this.updateTitle('');
+    },
 
-	methods: {
-		updateTitle(pageTitle) {
-			document.title = (pageTitle ? pageTitle + ' - ' : '') + wp.site_name;
-		}
-	},
+    methods: {
+        updateTitle(pageTitle) {
+            document.title = (pageTitle ? pageTitle + ' - ' : '') + wp.site_name;
+        }
+    },
 
-	events: {
-		'page-title': function(pageTitle) {
-			this.updateTitle(pageTitle);
-		}
-	}
+    events: {
+        'page-title': function(pageTitle) {
+            this.updateTitle(pageTitle);
+        }
+    }
 });
 var router = new VueRouter({
-	hashbang: false,
-	history: true
+    hashbang: false,
+    history: true
 });
 
 router.map({
-	'/': {
-		component: Posts
-	}
+    '/': {
+        component: Posts
+    }
 })
 
 for (var key in wp.routes) {
-	var route = wp.routes[key];
-	router.on(route.slug, {
-		component: Vue.component(capitalize(route.type)),
-		postId: route.id
-	});
+    var route = wp.routes[key];
+    router.on(route.slug, {
+        component: Vue.component(capitalize(route.type)),
+        postId: route.id
+    });
 }
 
 router.start(App, '#app');
 
 function capitalize(string) {
-	return string.charAt(0).toUpperCase() + string.slice(1);
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
