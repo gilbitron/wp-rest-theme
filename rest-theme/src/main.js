@@ -48,7 +48,7 @@ router.on(wp.base_path, {
 
 for (var key in wp.routes) {
     var route = wp.routes[key];
-    router.on(route.slug, {
+    router.on(wp.base_path + route.slug, {
         component: Vue.component(capitalize(route.type)),
         postId: route.id
     });
