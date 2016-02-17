@@ -3,7 +3,7 @@
 add_theme_support( 'title-tag' );
 
 function rest_theme_scripts() {
-	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/node_modules/normalize.css/normalize.css', false, '3.0.3' );
+	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/normalize.css', false, '3.0.3' );
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array( 'normalize' ) );
 
 	wp_enqueue_script( 'rest-theme-vue', get_template_directory_uri() . '/rest-theme/dist/build.js', array(), '1.0.0', true );

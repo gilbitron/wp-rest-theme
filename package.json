@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "dev": "watchify -vd -p browserify-hmr -e rest-theme/src/main.js -o rest-theme/dist/build.js",
-    "build": "cross-env NODE_ENV=production browserify rest-theme/src/main.js | uglifyjs -c warnings=false -m > rest-theme/dist/build.js"
+    "build": "cross-env NODE_ENV=production browserify rest-theme/src/main.js | uglifyjs -c warnings=false -m > rest-theme/dist/build.js",
+    "assets": "cp node_modules/normalize.css/normalize.css assets"
   },
   "dependencies": {
     "normalize.css": "^3.0.3",
