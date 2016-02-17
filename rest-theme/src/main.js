@@ -42,11 +42,9 @@ var router = new VueRouter({
     history: true
 });
 
-router.map({
-    '/': {
-        component: Posts
-    }
-})
+router.on(wp.base_path, {
+    component: Posts
+});
 
 for (var key in wp.routes) {
     var route = wp.routes[key];

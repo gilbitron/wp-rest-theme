@@ -23,11 +23,11 @@
     <header class="header">
         <div class="container">
             <div class="site-title">
-                <a v-link="{ path: '/' }">{{ site_name }}</a>
+                <a v-link="{ path: base_path }">{{ site_name }}</a>
             </div>
             <ul class="nav">
                 <li v-for="page in pages">
-                    <a v-link="{ path: '/' + page.slug }">{{ page.title.rendered }}</a>
+                    <a v-link="{ path: base_path + page.slug }">{{ page.title.rendered }}</a>
                 </li>
             </ul>
         </div>
@@ -42,6 +42,7 @@
 
         data() {
             return {
+                base_path: wp.base_path,
                 site_name: wp.site_name,
                 pages: []
             }

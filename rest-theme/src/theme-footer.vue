@@ -9,7 +9,7 @@
 <template>
     <footer class="footer">
         <div class="container">
-            Copyright &copy; <a v-link="{ path: '/' }">{{ site_name }}</a>
+            Copyright &copy; <a v-link="{ path: base_path }">{{ site_name }}</a>
         </div>
     </footer>
 </template>
@@ -18,6 +18,7 @@
     export default {
         data() {
             return {
+                base_path: wp.base_path,
                 site_name: wp.site_name
             }
         }

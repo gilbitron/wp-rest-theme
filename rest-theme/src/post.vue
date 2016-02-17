@@ -5,7 +5,7 @@
 <template>
     <div class="post">
         <h1 class="entry-title" v-if="isSingle">{{ post.title.rendered }}</h1>
-        <h2 class="entry-title" v-else><a v-link="{ path: '/' + post.slug }">{{ post.title.rendered }}</a></h2>
+        <h2 class="entry-title" v-else><a v-link="{ path: base_path + post.slug }">{{ post.title.rendered }}</a></h2>
 
         <div class="entry-content">
             {{{ post.content.rendered }}}
@@ -38,7 +38,10 @@
         },
 
         data() {
-            isSingle: false
+            return {
+                base_path: wp.base_path,
+                isSingle: false
+            }
         },
 
         methods: {
