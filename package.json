@@ -20,7 +20,7 @@
     "cross-env": "^1.0.6",
     "babelify": "^7.2.0",
     "browserify": "^12.0.1",
-    "browserify-hmr": "^0.3.1",
+    "browserify-hmr": "^0.4.1",
     "http-server": "^0.8.5",
     "uglify-js": "^2.5.0",
     "vue-hot-reload-api": "^1.2.2",
